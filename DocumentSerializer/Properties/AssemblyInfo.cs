@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("DocumentSerializer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("State of Utah")]
+[assembly: AssemblyCompany("Mindfire Technology")]
 [assembly: AssemblyProduct("DocumentSerializer")]
-[assembly: AssemblyCopyright("Copyright © State of Utah 2015")]
+[assembly: AssemblyCopyright("Copyright © Mindfire Technology")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
