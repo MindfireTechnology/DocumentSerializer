@@ -22,28 +22,28 @@ namespace DocumentSerializer.Extensions
 
 		public static object Value(this PropertyInfo property, object value)
 		{
-			return property.GetValue(value);
+			return property.GetValue(value, null);
 		}
 
 		public static bool IsDocRef(this PropertyInfo property)
 		{
-			return property.CustomAttributes.Any(n => n.AttributeType == typeof(DocumentRefAttribute));
+			return property.GetCustomAttributes(true).Any(n => n.GetType() == typeof(DocumentRefAttribute));
 		}
 
 		public static bool IsIgnored(this PropertyInfo property)
 		{
-			return property.CustomAttributes.Any(n => n.AttributeType == typeof(JsonIgnoreAttribute));
+			return property.GetCustomAttributes(true).Any(n => n.GetType() == typeof(JsonIgnoreAttribute));
 		}
 
 		public static bool IsImportant(this PropertyInfo property)
 		{
-			return property.CustomAttributes.Any(n => n.AttributeType == typeof(ImportantAttribute));
+			return property.GetCustomAttributes(true).Any(n => n.GetType() == typeof(ImportantAttribute));
 		}
 
 		public static bool IsKey(this PropertyInfo property)
 		{
 			return property.Name.Equals("id", StringComparison.InvariantCultureIgnoreCase) ||
-				property.CustomAttributes.Any(n => n.AttributeType == typeof(KeyAttribute));
+				property.GetCustomAttributes(true).Any(n => n.GetType() == typeof(KeyAttribute));
 		}
 
 		public static bool IsEnumerable(this object value)

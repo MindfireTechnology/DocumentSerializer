@@ -16,7 +16,7 @@ namespace DocumentSerializer
 			if (objectType == null)
 				return false;
 
-			if (objectType.CustomAttributes.Any(n => n.AttributeType == typeof(DocumentAttribute)))
+			if (objectType.GetCustomAttributes(true).Any(n => n.GetType() == typeof(DocumentAttribute)))
 				return true;
 
 			if (objectType is IDocument)
