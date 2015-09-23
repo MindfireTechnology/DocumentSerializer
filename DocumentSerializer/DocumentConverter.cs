@@ -9,6 +9,11 @@ using System.Collections;
 
 namespace DocumentSerializer
 {
+	/// <summary>
+	/// JsonConverter for Newtonsoft JSON.NET that will custom serialize anything with the DocumentAttribute or anything 
+	/// that impliments IDocument. The properties in the Document that are marked with DocumentRef will include tye Id
+	/// along with any property marked with the Important attribute.
+	/// </summary>
 	public class DocumentConverter : JsonConverter
 	{
 		public override bool CanConvert(Type objectType)
@@ -77,7 +82,7 @@ namespace DocumentSerializer
 		protected virtual void SerializeObjectRefRecursive(JsonWriter writer, object value, JsonSerializer serializer)
 		{
 			// Only serialize Id and Important properties (recursively).
-			// Always serialize the ID -- name some varient of "ID", or has KeyAttribute
+			// Always serialize the ID -- name some varient of "ID"
 
 			if (value == null)
 			{

@@ -63,13 +63,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DocumentSerializer\DocumentSerializer.csproj">
-      <Project>{798a241f-9b1c-485b-9e82-b1be30ff9015}</Project>
-      <Name>DocumentSerializer</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\DocumentSerializer\DocumentSerializer.csproj">
+      <Project>{ccba624c-a973-4326-8565-f19b7a80b7ad}</Project>
+      <Name>DocumentSerializer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

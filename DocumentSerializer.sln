@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentSerializer", "DocumentSerializer\DocumentSerializer.csproj", "{798A241F-9B1C-485B-9E82-B1BE30FF9015}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{BB0CE6D1-F7A0-460F-82EB-9087F6D33240}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentSerializer", "DocumentSerializer\DocumentSerializer.csproj", "{CCBA624C-A973-4326-8565-F19B7A80B7AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{798A241F-9B1C-485B-9E82-B1BE30FF9015}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{798A241F-9B1C-485B-9E82-B1BE30FF9015}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{798A241F-9B1C-485B-9E82-B1BE30FF9015}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{798A241F-9B1C-485B-9E82-B1BE30FF9015}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BB0CE6D1-F7A0-460F-82EB-9087F6D33240}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BB0CE6D1-F7A0-460F-82EB-9087F6D33240}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB0CE6D1-F7A0-460F-82EB-9087F6D33240}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB0CE6D1-F7A0-460F-82EB-9087F6D33240}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCBA624C-A973-4326-8565-F19B7A80B7AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCBA624C-A973-4326-8565-F19B7A80B7AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCBA624C-A973-4326-8565-F19B7A80B7AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCBA624C-A973-4326-8565-F19B7A80B7AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -42,8 +41,7 @@ namespace DocumentSerializer.Extensions
 
 		public static bool IsKey(this PropertyInfo property)
 		{
-			return property.Name.Equals("id", StringComparison.InvariantCultureIgnoreCase) ||
-				property.GetCustomAttributes(true).Any(n => n.GetType() == typeof(KeyAttribute));
+			return property.Name.Equals("id", StringComparison.CurrentCultureIgnoreCase);
 		}
 
 		public static bool IsEnumerable(this object value)
