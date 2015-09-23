@@ -2,3 +2,6 @@
 /TestResults
 /UnitTests/obj
 /UnitTests/bin
+*.suo
+/DocumentSerializer/obj
+/DocumentSerializer/bin
