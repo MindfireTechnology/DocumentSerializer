@@ -4,6 +4,12 @@ Provides custom serialization for Denormalized References in Documents (for use 
 1. Mark your document classes with either the `[Document]` attribute or inherit from `DocumentSerializer.IDocument` interface.
 2. Mark the properties in your class that are important (using the `[Important]` attribute) and should be included with the denormalized reference.
 3. Mark references to other documents with the `[DocumentRef]` attribute. 
+4. Add the `DocumentConverter` type to the Newtonsoft JSON Serializer like so:
+
+```C#
+	var serializer = Newtonsoft.Json.JsonSerializer.Create();
+	serializer.Converters.Add(new DocumentConverter());
+```
 
 References marked with the `[DocumentRef]` attribute will be serialized into your class but will only include their `Id` and any properties marked as `[Important]`. Without these attributes, the entire relationship will be serialized. When working with denormalized references it is important to include basic information that would either proclude the need to lookup the source related document or would make sense if you had this type of document in an array. 
 
