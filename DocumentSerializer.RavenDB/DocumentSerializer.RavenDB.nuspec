@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>Mindfire.DocumentSerializer.RavenDB</id>
+		<version>1.0.0.0</version>
+		<title>DocumentSerializer for RavenDB Client</title>
+		<authors>Mindfire Technology, Nate Zaugg</authors>
+		<owners>Mindfire Technology, Nate Zaugg</owners>
+		<licenseUrl>https://github.com/MindfireTechnology/DocumentSerializer/blob/master/LICENSE</licenseUrl>
+		<projectUrl>https://github.com/MindfireTechnology/DocumentSerializer</projectUrl>
+		<iconUrl>https://avatars3.githubusercontent.com/u/13372702?v=3&amp;s=200</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<summary>
+		Easily allows complete control of denormalized reference serialization for objects saved in RavenDB.
+	</summary>
+	<description>
+		This package allows you to use attributes to control the serialization of your document under the RavenDB.Client JSON.NET serializer. This allows easily defined Denormalized References between documents. Mark documents with the Document attribute and mark properties that include links to other documents with the DocumentRef attribute. Only the ID field and fields marked with the Important attribute will be serialized into the document reference.
+	</description>
+		<releaseNotes>Adding support for custom implementations.</releaseNotes>
+		<copyright>Copyright 2015</copyright>
+		<tags>Document Document-Relationships Denormalized Denormalized-Reference NoSQL Document-Database RavenDB</tags>
+	</metadata>
+</package>

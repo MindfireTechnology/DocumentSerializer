@@ -5,3 +5,7 @@
 *.suo
 /DocumentSerializer/obj
 /DocumentSerializer/bin
+*.user
+/DocumentSerializer.RavenDB/bin/Release
+/DocumentSerializer.RavenDB/obj/Release
+/.vs/config

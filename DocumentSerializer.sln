@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{BB0CE6D1-F7A0-460F-82EB-9087F6D33240}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentSerializer", "DocumentSerializer\DocumentSerializer.csproj", "{CCBA624C-A973-4326-8565-F19B7A80B7AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentSerializer.RavenDB", "DocumentSerializer.RavenDB\DocumentSerializer.RavenDB.csproj", "{D0018ACD-E42E-45E8-AB3E-0B45EBFA9C09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{CCBA624C-A973-4326-8565-F19B7A80B7AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCBA624C-A973-4326-8565-F19B7A80B7AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCBA624C-A973-4326-8565-F19B7A80B7AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0018ACD-E42E-45E8-AB3E-0B45EBFA9C09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0018ACD-E42E-45E8-AB3E-0B45EBFA9C09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0018ACD-E42E-45E8-AB3E-0B45EBFA9C09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0018ACD-E42E-45E8-AB3E-0B45EBFA9C09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

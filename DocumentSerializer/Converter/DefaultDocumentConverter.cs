@@ -1,22 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 using DocumentSerializer.Extensions;
 using System.Collections;
 
-namespace DocumentSerializer
+namespace DocumentSerializer.Converter
 {
 	/// <summary>
 	/// JsonConverter for Newtonsoft JSON.NET that will custom serialize anything with the DocumentAttribute or anything 
 	/// that impliments IDocument. The properties in the Document that are marked with DocumentRef will include tye Id
 	/// along with any property marked with the Important attribute.
 	/// </summary>
-	public class DocumentConverter : JsonConverter
+	public class DefaultDocumentConverter
 	{
-		public override bool CanConvert(Type objectType)
+		public virtual bool CanConvert(Type objectType)
 		{
 			if (objectType == null)
 				return false;
@@ -30,22 +27,22 @@ namespace DocumentSerializer
 			return false;
 		}
 
-		public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+		public virtual object ReadJson(dynamic reader, Type objectType, object existingValue, dynamic serializer)
 		{
-			if (reader.TokenType == JsonToken.Null)
+			if ((int)reader.TokenType == 11 /*TokenType.Null*/)
 				return null;
 
 			var s = JsonSerializer.CreateDefault();
-			var result = s.Deserialize(reader, objectType);
+			var result = s.Deserialize((JsonReader)reader, objectType);
 			return result;
 		}
 
-		public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+		public virtual void WriteJson(dynamic writer, object value, dynamic serializer)
 		{
 			SerializeObjectRecursive(writer, value, serializer);
 		}
 
-		protected virtual void SerializeObjectRecursive(JsonWriter writer, object value, JsonSerializer serializer)
+		protected virtual void SerializeObjectRecursive(dynamic writer, object value, dynamic serializer)
 		{
 			// Serialize values that are marked with [DocumentRef] specially
 
@@ -79,7 +76,7 @@ namespace DocumentSerializer
 			writer.WriteEndObject();
 		}
 
-		protected virtual void SerializeObjectRefRecursive(JsonWriter writer, object value, JsonSerializer serializer)
+		protected virtual void SerializeObjectRefRecursive(dynamic writer, object value, dynamic serializer)
 		{
 			// Only serialize Id and Important properties (recursively).
 			// Always serialize the ID -- name some varient of "ID"

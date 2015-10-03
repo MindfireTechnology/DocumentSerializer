@@ -6,6 +6,7 @@ using DocumentSerializer;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using UnitTests.Model;
+using DocumentSerializer.Converter;
 
 namespace UnitTests
 {
@@ -18,7 +19,7 @@ namespace UnitTests
 			// Arrange
 			var model = new Link { Id = "1", Relationship = new LinkType { Id = "2", Name = "Blocked By", Description = "This task is blocked by another task" } };
 			string expected = "{\"Id\":\"1\",\"Task\":null,\"Relationship\":{\"Id\":\"2\",\"Name\":\"Blocked By\"}}";
-			var serializer = Newtonsoft.Json.JsonSerializer.Create();
+			var serializer = Newtonsoft.Json.JsonSerializer.Create(new JsonSerializerSettings());
 			serializer.Converters.Add(new DocumentConverter());
 			var ms = new MemoryStream();
 			var writer = new StreamWriter(ms);
@@ -40,7 +41,7 @@ namespace UnitTests
 			// Arrange
 			var model = CreateComplexTask();
 			string expected = "{\"Id\":\"task/1\",\"Type\":{\"Id\":\"tasktype/2\",\"Name\":\"User Story\"},\"Name\":\"Document Serialization\",\"Description\":\"Documents are serializing recursively into other documents with too much information.\",\"CreatedBy\":{\"Id\":\"user/3\",\"Username\":\"jwhedon\",\"FirstName\":\"Joss\",\"LastName\":\"Whedon\"},\"AssignedTo\":{\"Id\":\"user/4\",\"Username\":\"nzaugg\",\"FirstName\":\"Nate\",\"LastName\":\"Zaugg\"},\"Estimate\":4.3,\"OriginalEstimate\":2.0,\"EstimateToComplete\":null,\"Children\":[{\"Id\":\"task/2\",\"Type\":{\"Id\":\"tasktype/2\",\"Name\":\"User Story\"},\"Name\":\"Document Serialization Subtask 1\"},{\"Id\":\"task/3\",\"Type\":{\"Id\":\"tasktype/2\",\"Name\":\"User Story\"},\"Name\":\"Document Serialization Subtask 2\"}],\"Parent\":{\"Id\":\"task/4\",\"Type\":{\"Id\":\"tasktype/1\",\"Name\":\"Epoc\"},\"Name\":\"Document Serialization Parent Task Epoc\"},\"Linked\":[{\"Id\":\"link/5\",\"Task\":{\"Id\":\"task/4\",\"Type\":{\"Id\":\"tasktype/1\",\"Name\":\"Epoc\"},\"Name\":\"Document Serialization Parent Task Epoc\"},\"Relationship\":{\"Id\":\"6\",\"Name\":\"Related To\"}}]}";
-			var serializer = Newtonsoft.Json.JsonSerializer.Create();
+			var serializer = Newtonsoft.Json.JsonSerializer.Create(new JsonSerializerSettings());
 			serializer.Converters.Add(new DocumentConverter());
 			var ms = new MemoryStream();
 			var writer = new StreamWriter(ms);
@@ -62,7 +63,7 @@ namespace UnitTests
 		{
 			// Arrange
 			string input = "{\"Id\":\"1\",\"Task\":null,\"Relationship\":{\"Id\":\"2\",\"Name\":\"Blocked By\"}}";
-			var serializer = Newtonsoft.Json.JsonSerializer.Create();
+			var serializer = Newtonsoft.Json.JsonSerializer.Create(new JsonSerializerSettings());
 			serializer.Converters.Add(new DocumentConverter());
 
 			// Act
@@ -81,7 +82,7 @@ namespace UnitTests
 		{
 			// Arrange
 			string input = "{\"Id\":\"task/1\",\"Type\":{\"Id\":\"tasktype/2\",\"Name\":\"User Story\"},\"Name\":\"Document Serialization\",\"Description\":\"Documents are serializing recursively into other documents with too much information.\",\"CreatedBy\":{\"Id\":\"user/3\",\"Username\":\"jwhedon\",\"FirstName\":\"Joss\",\"LastName\":\"Whedon\"},\"AssignedTo\":{\"Id\":\"user/4\",\"Username\":\"nzaugg\",\"FirstName\":\"Nate\",\"LastName\":\"Zaugg\"},\"Estimate\":4.3,\"OriginalEstimate\":2.0,\"EstimateToComplete\":null,\"Children\":[{\"Id\":\"task/2\",\"Type\":{\"Id\":\"tasktype/2\",\"Name\":\"User Story\"},\"Name\":\"Document Serialization Subtask 1\"},{\"Id\":\"task/3\",\"Type\":{\"Id\":\"tasktype/2\",\"Name\":\"User Story\"},\"Name\":\"Document Serialization Subtask 2\"}],\"Parent\":{\"Id\":\"task/4\",\"Type\":{\"Id\":\"tasktype/1\",\"Name\":\"Epoc\"},\"Name\":\"Document Serialization Parent Task Epoc\"},\"Linked\":[{\"Id\":\"link/5\",\"Task\":{\"Id\":\"task/4\",\"Type\":{\"Id\":\"tasktype/1\",\"Name\":\"Epoc\"},\"Name\":\"Document Serialization Parent Task Epoc\"},\"Relationship\":{\"Id\":\"6\",\"Name\":\"Related To\"}}]}";
-			var serializer = Newtonsoft.Json.JsonSerializer.Create();
+			var serializer = Newtonsoft.Json.JsonSerializer.Create(new JsonSerializerSettings());
 			serializer.Converters.Add(new DocumentConverter());
 
 			// Act
