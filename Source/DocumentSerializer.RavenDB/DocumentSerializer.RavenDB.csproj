@@ -34,9 +34,8 @@
       <HintPath>..\packages\Mindfire.DocumentSerializer.1.0.1.0\lib\portable-net45+sl50+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\DocumentSerializer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Raven.Abstractions, Version=3.0.0.0, Culture=neutral, PublicKeyToken=37f41c7f99471593, processorArchitecture=MSIL">
       <HintPath>..\packages\RavenDB.Client.3.0.3800\lib\net45\Raven.Abstractions.dll</HintPath>
@@ -74,7 +73,7 @@
   <Target Name="AfterBuild">
   </Target>
   -->
-	<Target Name="AfterBuild">
-		<Exec Command="&quot;$(SolutionDir)Build Tools\nuget.exe&quot; pack &quot;$(ProjectDir)DocumentSerializer.RavenDB.csproj&quot; -Prop Configuration=Release" />
-	</Target>
+  <Target Name="AfterBuild">
+    <Exec Command="&quot;$(SolutionDir)Build Tools\nuget.exe&quot; pack &quot;$(ProjectDir)DocumentSerializer.RavenDB.csproj&quot; -Prop Configuration=Release" />
+  </Target>
 </Project>
